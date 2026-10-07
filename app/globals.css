@@ -1,0 +1,122 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: #e6e0d6;
+  --color-surface: #efeae2;
+  --color-surface-2: #ddd6ca;
+  --color-foreground: #161513;
+  --color-muted-foreground: #5f5a53;
+  --color-accent: #2f4d6b;
+  --color-accent-hover: #1f3a55;
+  --color-highlight: #a0662f;
+  --color-border: #cdb59a;
+  --color-ink: #161513;
+  --color-ink-foreground: #f4f1ec;
+  --color-ink-muted: #b8b2a8;
+  --color-ink-border: #3a3733;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.5rem;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-size: 15px;
+    background-image:
+      radial-gradient(900px 600px at 90% -10%, rgb(47 77 107 / 0.07), transparent 60%),
+      radial-gradient(700px 500px at -10% 45%, rgb(160 102 47 / 0.06), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background: #2f4d6b;
+    color: #f4f1ec;
+  }
+
+  :focus-visible {
+    outline: 2px solid #2f4d6b;
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+.dot-grid {
+  background-image: radial-gradient(rgb(22 21 19 / 0.12) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    380px circle at var(--x, 50%) var(--y, 50%),
+    rgb(47 77 107 / 0.08),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #2f4d6b 0%, #a0662f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+dialog.cert-dialog::backdrop {
+  background: rgb(22 21 19 / 0.8);
+  backdrop-filter: blur(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
