@@ -46,16 +46,7 @@ export const project = {
   core: 'RoadIntel is an AI-powered RoadWatch platform for road quality monitoring, citizen reporting, AI-assisted road defect verification, road risk prioritization, repair tracking, contractor accountability, and public spending transparency.',
   oneLine:
     'RoadIntel converts citizen road complaints into AI-verified, geo-tagged, authority-assigned, publicly trackable repair actions with spending visibility and before/after repair proof.',
-  alignment: [
-    'Road quality monitoring',
-    'Citizen issue reporting',
-    'Public spending tracking',
-    'Responsible authority routing',
-    'Repair progress tracking',
-    'Contractor accountability',
-    'Before/after repair proof',
-    'Transparent road infrastructure governance',
-  ],
+  
   technologies: ['HTML', 'CSS', 'JavaScript', 'AI Tools'],
 }
 
