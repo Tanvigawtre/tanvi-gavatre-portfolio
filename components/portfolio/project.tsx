@@ -24,12 +24,20 @@ export function Project() {
         <Reveal>
           <Spotlight className="grid gap-10 rounded-3xl border border-border bg-surface/60 p-6 md:p-10 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
-              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-accent">Core Idea</h3>
-              <p className="text-pretty text-base leading-relaxed text-foreground">{project.core}</p>
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+                Core Idea
+              </h3>
+
+              <p className="text-pretty text-base leading-relaxed text-foreground">
+                {project.core}
+              </p>
             </div>
 
             <div className="lg:col-span-5">
-              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-accent">Technologies</h3>
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-accent">
+                Technologies
+              </h3>
+
               <ul className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <li
@@ -40,19 +48,25 @@ export function Project() {
                   </li>
                 ))}
               </ul>
+
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ArrowLink href={links.roadintel} external arrow="up-right">
                   Live Project
                 </ArrowLink>
-                <ArrowLink href={links.roadintelRepo} external arrow="up-right" variant="outline">
+
+                <ArrowLink
+                  href={links.roadintelRepo}
+                  external
+                  arrow="up-right"
+                  variant="outline"
+                >
                   GitHub
                 </ArrowLink>
               </div>
             </div>
           </Spotlight>
         </Reveal>
-
-        
+      </div>
     </section>
   )
 }
