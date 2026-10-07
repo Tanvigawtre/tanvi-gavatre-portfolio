@@ -52,24 +52,7 @@ export function Project() {
           </Spotlight>
         </Reveal>
 
-        <div className="mt-14">
-          <Reveal>
-            <h3 className="mb-6 text-sm font-semibold uppercase tracking-[0.12em] text-accent">RoadWatch Alignment</h3>
-          </Reveal>
-          <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {project.alignment.map((item, i) => (
-              <Reveal as="li" key={item} delay={(i % 4) * 70}>
-                <Spotlight className="group flex h-full items-start gap-3 rounded-2xl border border-border bg-surface/60 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-accent/60">
-                  <span className="font-display text-sm font-semibold text-accent transition-colors group-hover:text-highlight">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <span className="text-sm font-medium leading-snug text-foreground md:text-base">{item}</span>
-                </Spotlight>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </div>
+        
     </section>
   )
 }
