@@ -9,7 +9,7 @@ export const profile = {
   ],
   portrait: '/images/tanvi-portrait.jpeg',
   details: [
-    { label: 'Location', value: 'Pune, Maharashtra' },
+    
     { label: 'Education', value: 'BCA · 3rd Year' },
     { label: 'CGPA', value: '9.2' },
   ],
